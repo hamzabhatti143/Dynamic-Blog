@@ -1,6 +1,7 @@
 import { blogs } from "../../../../data/blogs"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Comments from "@/components/Fetch"
 import Image from "next/image"
 export default function BlogPost({params} : {params: {slug: string}}){
     const blog = blogs.find((b) => b.slug === params.slug);
@@ -22,6 +23,8 @@ export default function BlogPost({params} : {params: {slug: string}}){
             <h2 className="text-2xl mt-8 font-bold">{blog.title}</h2>
             <p className="text-justify">{blog.content}</p>
         </div>
+
+        <Comments />
 
         <Footer />
 
